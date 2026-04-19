@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/CMakeFiles/bootloader
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/CMakeFiles/bootloader.rule
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/CMakeFiles/bootloader-complete.rule
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

@@ -1,0 +1,5 @@
+Command: ninja all
+fatal: bad config line 2 in file C:/esp/v5.5.3/esp-idf/.git/modules/components/bootloader/subproject/components/micro-ecc/micro-ecc/config
+fatal: bad config line 2 in file C:/esp/v5.5.3/esp-idf/.git/modules/components/openthread/openthread/config
+ESP RainMaker Project commit: v1.12.3-2-g46a8b60
+ESP Insights Project commit: v1.12.3-2-g46a8b60

@@ -1,0 +1,24 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\Natalie\esp\esp-rainmaker\examples\switch - Copy\build\bootloader\esp-idf\esptool_py" && C:\Espressif\tools\python\v5.5.3\venv\Scripts\python.exe C:/esp/v5.5.3/esp-idf/components/partition_table/check_sizes.py --offset 0xc000 bootloader 0x0 "C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/bootloader/bootloader.bin""
+Bootloader binary size 0x5840 bytes. 0x67c0 bytes (54%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_driver.c.obj
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/main/app_driver.c:62:21: warning: 'g_slot_task' defined but not used [-Wunused-variable]
+   62 | static TaskHandle_t g_slot_task = NULL;
+      |                     ^~~~~~~~~~~
+C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/main/app_driver.c:28:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   28 | static const char *TAG = "app_driver";
+      |                    ^~~
+[4/9] Completed 'bootloader'
+[5/9] Linking C static library esp-idf\main\libmain.a
+[6/9] Generating esp-idf/esp_system/ld/sections.ld
+[7/9] Linking CXX executable switch.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.12.dev1
+Creating esp32c6 image...
+Merged 2 ELF sections
+Successfully created esp32c6 image.
+Generated C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/switch.bin
+[9/9] C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\Natalie\esp\esp-rainmaker\examples\switch - Copy\build\esp-idf\esptool_py" && C:\Espressif\tools\python\v5.5.3\venv\Scripts\python.exe C:/esp/v5.5.3/esp-idf/components/partition_table/check_sizes.py --offset 0xc000 partition --type app "C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/partition_table/partition-table.bin" "C:/Users/Natalie/esp/esp-rainmaker/examples/switch - Copy/build/switch.bin""
+switch.bin binary size 0x1a6240 bytes. Smallest app partition is 0x1e0000 bytes. 0x39dc0 bytes (12%) free.

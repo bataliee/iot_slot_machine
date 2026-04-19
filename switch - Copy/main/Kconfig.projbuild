@@ -1,0 +1,137 @@
+menu "Example Configuration"
+
+    config EXAMPLE_BOARD_BUTTON_GPIO
+        int "Boot Button GPIO"
+        default 28 if IDF_TARGET_ESP32C5
+        default 9 if IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32C6 || IDF_TARGET_ESP32C2 || IDF_TARGET_ESP32H2
+        default 0
+        help
+            GPIO number on which the "Boot" button is connected. This is generally used
+            by the application for custom operations like toggling states, resetting to defaults, etc.
+
+    config EXAMPLE_ENABLE_TEST_NOTIFICATIONS
+        bool "Test Notifications"
+        default n
+        help
+            Enable this option to test mobile push notifications. When enabled, turning on the switch using
+            push button will trigger a parameter notification {"Switch":{"Power":true}} and turning off will
+            trigger an alert "Switch was turned off".
+
+    config EXAMPLE_OUTPUT_GPIO
+        int "Output GPIO"
+        default 19
+        help
+            This is an output GPIO that will be connected to a relay or other driver circuit in most cases.
+            If the power changes, this GPIO output level will also change.
+
+    choice LED_TYPE
+        prompt "LED Type"
+        default LED_TYPE_NONE if IDF_TARGET_ESP32
+        default LED_TYPE_RGB
+        help
+            Select the type of LED to use.
+
+        config LED_TYPE_RGB
+            bool "RGB LED (3-pin RGB LED)"
+            help
+                Use a 3-pin RGB LED with separate GPIO pins for red, green, and blue.
+
+        config LED_TYPE_WS2812
+            bool "WS2812 LED Strip"
+            help
+                Use WS2812 addressable LED strip.
+
+        config LED_TYPE_NONE
+            bool "No LED"
+            help
+                Disable LED hardware. Useful for testing without LED hardware connected.
+    endchoice
+
+    config RGB_LED_1_RED_GPIO
+        int "RGB LED 1 Red GPIO (PWM)"
+        default 0
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 1 red channel.
+
+    config RGB_LED_1_GREEN_GPIO
+        int "RGB LED 1 Green GPIO (PWM)"
+        default 1
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 1 green channel.
+
+    config RGB_LED_1_BLUE_GPIO
+        int "RGB LED 1 Blue GPIO (on/off)"
+        default 2
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 1 blue channel. This channel is driven as on/off only.
+
+    config RGB_LED_2_RED_GPIO
+        int "RGB LED 2 Red GPIO (PWM)"
+        default 3
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 2 red channel.
+
+    config RGB_LED_2_GREEN_GPIO
+        int "RGB LED 2 Green GPIO (PWM)"
+        default 4
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 2 green channel.
+
+    config RGB_LED_2_BLUE_GPIO
+        int "RGB LED 2 Blue GPIO (on/off)"
+        default 5
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 2 blue channel. This channel is driven as on/off only.
+
+    config RGB_LED_3_RED_GPIO
+        int "RGB LED 3 Red GPIO (PWM)"
+        default 6
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 3 red channel.
+
+    config RGB_LED_3_GREEN_GPIO
+        int "RGB LED 3 Green GPIO (PWM)"
+        default 7
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 3 green channel.
+
+    config RGB_LED_3_BLUE_GPIO
+        int "RGB LED 3 Blue GPIO (on/off)"
+        default 8
+        depends on LED_TYPE_RGB
+        help
+            GPIO number for LED 3 blue channel. This channel is driven as on/off only.
+
+    config RGB_LED_ACTIVE_LEVEL_HIGH
+        bool "RGB LED Active Level High"
+        default n
+        depends on LED_TYPE_RGB
+        help
+            Set to y if the RGB LED is active high (common cathode), n if active low (common anode).
+
+    config WS2812_LED_GPIO
+        int "WS2812 LED GPIO"
+        default 27 if IDF_TARGET_ESP32C5
+        default 8 if IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32C6 || IDF_TARGET_ESP32H2
+        default 48 if IDF_TARGET_ESP32S3
+        default 18
+        depends on LED_TYPE_WS2812
+        help
+            GPIO number for the WS2812 RGB LED strip.
+
+    config WS2812_LED_COUNT
+        int "Number of WS2812 LEDs"
+        default 1
+        range 1 256
+        depends on LED_TYPE_WS2812
+        help
+            Number of LEDs in the WS2812 strip.
+endmenu
